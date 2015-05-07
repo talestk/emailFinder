@@ -89,13 +89,5 @@ function validateEmail(email) {
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	return re.test(email);
 }
-
-
-csv.on('end', function () {
-});
-
-var init = function () {
-	return fs.createReadStream('testListOfAuthors.txt').pipe(csv);
-};
-
-init();
+// init
+fs.createReadStream('testListOfAuthors.txt').pipe(csv);
